@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Recipe Mage </h1>
+    <!-- <form method="GET" action="/api/recipes?title=cookie">
+        <label for="title">Find Recipies of this name:</label><br>
+        <input type="text" id="title" name="title" value="Cookie"><br>
+        <input type="submit" value="Submit">
+    </form>  -->
+
+    <input type="text" id="test"  value="" />
+    <br/>
+    <button onclick="fetchRecipes()" id="testButton" >Submit Response</button>
+
+    <script>
+        function renderDataAsHTML(data) {
+        const container = document.getElementById('data-container'); // Id for data div container...
+        
+            if(container.innerHTML != ""){
+                container.innerHTML = "";
+            }
+
+            for (const key in data) {
+                const recipe = data[key];
+                const recipeDiv = document.createElement('div');
+                recipeDiv.innerHTML = `<h2>${recipe.title}</h2>`;
+                container.appendChild(recipeDiv);
+            }
+        }
+
+        function fetchRecipes() {
+            var value = document.getElementById('test').value;
+            fetch('/api/recipes?word=' + value)
+            .then(response => response.json())
+            .then(data => {
+                // Call a function to represent the data using HTML
+                renderDataAsHTML(data);
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+        }
+
+    </script>
+
+    <div id="data-container"></div>
+
+</body>
+</html>

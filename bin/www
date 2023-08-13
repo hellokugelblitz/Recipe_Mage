@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('recipe-mage:server');
+var debug = require('debug')('recipemage:server');
 var http = require('http');
 
 /**
