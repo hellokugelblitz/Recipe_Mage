@@ -1,0 +1,1 @@
+document.getElementById("contains").checked = true;
