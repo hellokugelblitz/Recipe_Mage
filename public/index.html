@@ -3,7 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet"> -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="stylesheets/style.css">
+    <!-- <script language="JavaScript" type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/js/jquery-ui-personalized-1.5.2.packed.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/js/sprinkle.js"></script> -->
+    <!-- <script type="text/javascript" src="jquery-3.5.1.min.js"> </script>  -->
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+
     <title>Recipe Mage</title>
 </head>
 <body>
@@ -14,11 +26,41 @@
             <label for="vehicle1">Only contains</label><br>
             <input type="checkbox" id="contains" name="contains" value="contains">
             <label for="vehicle2">Contains</label><br>
+
             <br>
-            <input type="text" id="test"  value="chicken,flour" />
-            <br/>
+            <!-- <input type="text" id="test"  placeholder="chicken,flour" /> -->
+            <!-- <br/>
+            <br> -->
+            
+
+            <div class="ui-widget">
+                <label for="tags">Ingredient: </label>
+                <input id="tags">
+                <svg version="1.1" id="plus_btn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                    viewBox="0 0 50 50" xml:space="preserve">
+                    <circle id="circle" cx="25" cy="25" r="25" onclick="add_ingredient()" />/>
+                    <line style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="25" y1="13" x2="25" y2="38"/>
+                    <line style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="37.5" y1="25" x2="12.5" y2="25"/>
+                </svg>
+            </div>
             <br>
-            <button onclick="fetchRecipes('test')" id="testButton" >Submit Response</button>
+
+            <svg version="1.1" id="x_btn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+            viewBox="0 0 50 50" xml:space="preserve">
+                <circle id="x_circle" cx="25" cy="25" r="25" onclick="add_ingredient()" />/>
+                <line style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="15" y1="15" x2="35" y2="35"/>
+                <line style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="35" y1="15" x2="15" y2="35"/>
+            </svg>
+
+            <nav>
+                <ul id="ingredient-list">
+                    <p> You currently have no ingredients... </p>
+                </ul>
+            </nav>
+            <br>
+            <button onclick="fetchRecipes()" id="testButton" >Search Recipes</button>
+
+
         </div>
 
         <div id="data-container"></div>
@@ -28,3 +70,4 @@
     <script src="javascripts/page_manager.js"></script>
 </body>
 </html>
+

@@ -20,7 +20,7 @@ a {
   padding: 10px;
   border-radius: 15px;
   margin-top: 20px;
-  margin-left: 250px;
+  margin-left: 375px;
   margin-right: 10px;
 }
 
@@ -34,3 +34,83 @@ a {
   min-width: 200px;
   background-color: rgb(175, 182, 188);
 }
+
+.ui-autocomplete {
+  max-height: 200px;
+  overflow-y: auto;
+  /* prevent horizontal scrollbar */
+  overflow-x: hidden;
+  /* add padding to account for vertical scrollbar */
+  padding-right: 20px;
+  max-width: 145px;
+  background-color: #d3d3d3;
+} 
+
+#ui-widget {
+  width: 160px;
+  align-items: baseline;
+}
+
+#plus_btn {
+  width: 20px;
+  transition: 0.3s;
+}
+
+#circle {
+  fill:#477683;
+  transition: 0.2s;
+}
+
+#plus_btn circle:hover {
+  fill:#32525b;
+}
+
+#plus_btn line {
+  pointer-events: none;
+}
+
+
+/* hehe */
+
+#x_btn {
+  width: 20px;
+  transition: 0.3s;
+}
+
+#x_circle {
+  fill:#834747;
+  transition: 0.2s;
+}
+
+#x_btn circle:hover {
+  fill:#5b3232;
+}
+
+#x_btn line {
+  pointer-events: none;
+}
+
+
+nav ul{
+  background-color: rgb(158, 158, 158);
+  padding: 10px;
+  padding-top: 0px;
+  border-radius: 15px;
+  height:fit-content;
+   width:75%;
+}
+nav ul{
+  overflow:hidden; 
+  overflow-y:scroll;
+}
+
+nav ul li {
+  /* margin-left: 20px; */
+  margin-top: 10px;
+  /* margin-bottom: 10px;  */
+  background-color: #477683;
+  padding: 10px;
+  border-radius: 5px;
+  width: fit-content;
+}
+
