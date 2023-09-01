@@ -10,9 +10,8 @@ function renderDataAsHTML(data) {
         for (const key in data) {
             const recipe = data[key];
             recipe.ingredients = recipe.ingredients.map(str => str.replace('ADVERTISEMENT', '').trim());
-            // console.log(recipe.ingredients);
             const recipeDiv = document.createElement('div');
-            recipeDiv.id = "recipe"
+            recipeDiv.id = "recipe";
             recipeDiv.innerHTML = `<h2>${recipe.title}</h2><p>${recipe.ingredients}</p>`;
             container.appendChild(recipeDiv);
         }
@@ -40,15 +39,14 @@ function renderDataAsHTML(data) {
         var list = document.getElementById("ingredient-list");
         if(ingredients.length == 0 && value != ""){
             list.innerHTML = "";
-            list.innerHTML = "<li>" + document.getElementById('tags').value + "<svg version='1.1' id='x_btn' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 50 50' xml:space='preserve'> <circle id='x_circle' cx='25' cy='25' r='25' onclick='add_ingredient()' /> <line style='fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;' x1='15' y1='15' x2='35' y2='35'/> <line style='fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;' x1='35' y1='15' x2='15' y2='35'/> </svg>" + "</li>";
+            list.innerHTML = "<li>" + document.getElementById('tags').value + " <a>[x]</a>" + "</li>";
 
             ingredients.push(value);
         } else if(value != "") {
-            list.innerHTML = (list.innerHTML + "<li>" + document.getElementById('tags').value  + "<svg version='1.1' id='x_btn' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 50 50' xml:space='preserve'> <circle id='x_circle' cx='25' cy='25' r='25' onclick='add_ingredient()' /> <line style='fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;' x1='15' y1='15' x2='35' y2='35'/> <line style='fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;' x1='35' y1='15' x2='15' y2='35'/> </svg>" + "</li>");
+            list.innerHTML = list.innerHTML + "<li>" + document.getElementById('tags').value + " <a>[x]</a>" + "</li>";
             ingredients.push(value);
         }
         console.log(ingredients);
-        
     }
 
     function create_ingredient_string(array){
